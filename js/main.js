@@ -23,12 +23,59 @@ const inventors = [
 const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
+
+
+//    The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+//console.log(inventors);
+
+    function filterBefore1500(value) {
+
+        return value.year > 1499 && value.year < 1600;
+    }
+
+
+    var filteredInventor = inventors.filter(filterBefore1500);
+
+
+console.log(filteredInventor);
+
 // Array.prototype.map()
 // 2. Give us an array of the inventors' first and last names
+
+
+//    The map() method creates a new array with the results of calling a provided function on every element in this array.
+
+
+    function mapped(value) {
+        return value.first + " " + value.last;
+    }
+
+    var mappedInventor = inventors.map(mapped);
+
+console.log(mappedInventor);
+
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
+
+    // The sort() method sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The default sort order is according to string Unicode code points.
+
+    function sortOldest(a,b) {
+
+        return a.year - b.year;
+    }
+
+
+    var oldest = inventors.sort(sortOldest);
+
+
+console.log(oldest);
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
+
+
+//
+
+
 // 5. Sort the inventors by years lived
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
