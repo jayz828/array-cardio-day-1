@@ -73,14 +73,81 @@ console.log(oldest);
 // 4. How many years did all the inventors live?
 
 
+// The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+
+
+
+
+//var birthYears = inventors.reduce(function() {
 //
+//});
+
+
+var allAges = inventors.reduce(function(acc, val) {
+
+
+    //console.log(val.year);
+
+    //val = inventors.passed - inventors.year;
+    //console.log(val);
+    return acc + (val.passed - val.year);
+}, 0);
+
+
+
+
+console.log(allAges);
 
 
 // 5. Sort the inventors by years lived
+
+
+
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+
+    var sortedNames = people.sort();
+console.log(sortedNames);
+
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+var numCars = 0;
+var numTrucks = 0;
+var numBikes = 0;
+var numVan =0;
+var numWalk=0;
+
+var dataCount = data.reduce(function(acc, val) {
+
+    console.log(val);
+    if (val == "car") {
+        numCars+=1;
+    }
+
+    if (val == "truck") {
+        numTrucks+=1;
+    }
+
+    if (val == "bike") {
+        numBikes+=1;
+    }
+
+    if (val == "van") {
+        numVan+=1;
+    }
+
+    if (val == "walk") {
+        numWalk+=1;
+    }
+
+    //console.log(numCars);
+
+});
+
+console.log(numCars,numTrucks,numBikes,numVan,numWalk);
