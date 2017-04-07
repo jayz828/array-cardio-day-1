@@ -43,6 +43,10 @@ console.log(filteredInventor);
 // 2. Give us an array of the inventors' first and last names
 
 
+
+
+
+
 //    The map() method creates a new array with the results of calling a provided function on every element in this array.
 
 
@@ -103,8 +107,60 @@ console.log(allAges);
 
 
 
+function getAge(acc, val){
+
+    return val.passed - val.year;
+}
+
+
+var ageInventor = inventors.reduce(getAge,0);
+
+console.log(ageInventor);
+
+function sortByAge(a, b) {
+
+
+    return (a.passed - a.year)  - (b.passed - b.year);
+}
+
+var sorted = inventors.sort(sortByAge);
+
+
+
+
+
+
+
+
+console.log(sorted);
+
+
+
+
+
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+
+function findBlvd(value) {
+
+    return value.title.match(expr);
+
+}
+
+//var listItems = document.querySelectorAll("li a[title]");
+
+
+var nodesArray = [].slice.call(document.querySelectorAll("li a[title]"));
+
+
+var blvd = nodesArray.filter(findBlvd);
+
+console.log(blvd);
+
+
+var expr = /Boulevard de/;  // no quotes here
+
 
 
 // 7. sort Exercise
